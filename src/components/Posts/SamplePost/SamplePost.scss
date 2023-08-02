@@ -1,0 +1,24 @@
+.sample-post{
+    display: grid;
+    grid-template-rows: 30% 70%;
+
+    padding: 10px 20px;
+
+    border-top: #2f3336 solid 1px;
+
+    .short-info{
+        grid-template-columns: 15% 85%;
+    }
+
+    &__likes {
+        display: flex;
+
+        .sample-post__button {
+            width: 25px;
+            height: 25px;
+            background-color: black;
+            border: #ffffff solid 1px;
+            margin: 13px 10px;
+        }
+    }
+}

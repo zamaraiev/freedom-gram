@@ -1,0 +1,18 @@
+$borderColor: #2f3336;
+
+.dialog {
+    height: 50px;
+
+    text-decoration: none;
+    color: white;
+
+    border: $borderColor solid 1px;
+    vertical-align: middle;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+
+    &.active , &:hover{
+        background-color: #3c4144;
+    }
+}

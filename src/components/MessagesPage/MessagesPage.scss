@@ -1,0 +1,13 @@
+$borderColor: #2f3336;
+
+.messages{
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+    height: 100%;
+
+    &__dialogs{
+        border-right: $borderColor solid 1px;
+    }
+
+}

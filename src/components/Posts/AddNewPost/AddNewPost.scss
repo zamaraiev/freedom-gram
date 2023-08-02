@@ -1,0 +1,26 @@
+.add-new-post {
+    padding: 20px;
+
+    &__input_grup {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 30px;
+
+        textarea {
+            width: 100%;
+            border-style: none;
+            border-radius: 60px;
+        }
+
+        .button{
+            background-color: #1d9bf0;
+            height: 50px;
+        }
+
+    }
+
+    &__content {
+        padding: 10px;
+    }    
+}
+  

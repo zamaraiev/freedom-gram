@@ -1,0 +1,43 @@
+$bgColor: #000000;
+$textColor: #ffffff;
+$iconColor: $textColor;
+$buttonColor: #1d9bf0;
+
+.app-header{
+    height: 100vh;
+  
+    .menu {
+      &_logo{
+        width: 28px;
+        display: block;
+        margin: 30px 15px;
+    
+        svg{
+          fill: $iconColor !important;
+        }
+      }
+    
+      ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+          margin: 30px 0;
+    
+          .menu__link_img{
+            width: 28px;
+            margin: 0 15px;
+          }
+    
+          .add_tweet_button{
+            width: 80%;
+            height: 50px;
+
+            background-color: $buttonColor;
+          }      
+        }
+      }
+    }
+  }
+  
+  

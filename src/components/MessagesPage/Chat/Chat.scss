@@ -1,0 +1,16 @@
+$borderColor: #2f3336;
+
+.curent-chat{
+    &__message{
+       padding: 10px;
+       margin: 10px;
+       width: fit-content;
+
+
+       border: $borderColor solid 1px;
+       border-radius: 60px;
+
+       background-color: #16181c;
+
+    }
+}
