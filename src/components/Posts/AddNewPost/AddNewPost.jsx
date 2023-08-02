@@ -27,7 +27,7 @@ const AddNewPost = (props) =>{
         <h2 className='add-new-post__title'>Додати новий пост</h2>
         <div className='add-new-post__input_grup'>
           <textarea className='add-new-post__content' ref={postTextarea}/>
-          <button className='button' onClick={addNewPost}>Опублікувати!</button>
+          <button className='button' onClick={addNewPost}>Додати</button>
         </div>
       </div>
     );
