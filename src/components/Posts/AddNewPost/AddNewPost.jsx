@@ -1,5 +1,6 @@
 import React from 'react';
-import { addPostActionCreator } from '../../../redux/addNewPostReducer';
+import { addPostActionCreator } from '../../../redux/accountReducer';
+import { addPostGlobalActionCreator } from '../../../redux/homeReducer';
 
 import './AddNewPost.scss';
 
@@ -10,8 +11,7 @@ const AddNewPost = (props) =>{
   let addNewPost = () =>{
     let postContent = postTextarea.current.value;
 
-    //console.log(postContent)
-    
+    props.dispatch(addPostGlobalActionCreator(postContent));
     props.dispatch(addPostActionCreator(postContent));
   };
 

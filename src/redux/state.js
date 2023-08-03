@@ -1,7 +1,9 @@
 import accountAvatar from '../icons/avatar.jpg';
 import profileBg from '../icons/img.jpg';
-import addNewPostReducer from './addNewPostReducer';
+
+import accountReducer from './accountReducer';
 import messagesReducer from './messagesReducer';
+import homeReducer from './homeReducer'
 
 let store = {
     _state: {
@@ -53,7 +55,8 @@ let store = {
     },
 
     dispatch(action){
-        this._state = addNewPostReducer(this._state , action);
+        this._state = accountReducer(this._state , action);
+        this._state = homeReducer(this._state , action);
         this._state.messagePage = messagesReducer(this._state.messagePage , action);
 
         this._callSubscriber()
@@ -61,3 +64,6 @@ let store = {
 }   
 
 export default store;
+
+
+

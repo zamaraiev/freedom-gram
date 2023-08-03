@@ -1,6 +1,6 @@
 import React from 'react';
 import {Routes, Route } from 'react-router-dom';
-import { getStateActionCreator } from './redux/addNewPostReducer';
+import { getStateActionCreator } from './redux/state';
 
 import Header from './components/Header/Header.jsx';
 import Sidebar from './components/Sidebar/Sidebar.jsx';

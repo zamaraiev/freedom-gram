@@ -4,11 +4,11 @@ import { BrowserRouter} from 'react-router-dom';
 
 import App from './App';
 
-import store from './redux/state';
+import store from './redux/reduxStore';
 
 import './index.scss';
 
-export let renderReactTree = () =>{
+export let renderEntireTree = () =>{
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
@@ -19,8 +19,8 @@ export let renderReactTree = () =>{
     );
 }
 
-renderReactTree();
-store.subscriber(renderReactTree);
+renderEntireTree();
+store.subscribe(renderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

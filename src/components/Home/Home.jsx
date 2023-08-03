@@ -6,7 +6,6 @@ import './Home.scss';
 
 
 const Home = (props) =>{
-  debugger;
    return(
       <div className='home-page'>
         <PostsBlock postData={props.state.postData} dispatch={props.dispatch}/>
