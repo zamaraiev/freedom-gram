@@ -1,6 +1,4 @@
 import React from 'react';
-import {addMessageActionCreator} from '../../../../redux/messagesReducer';
-
 import './AddNewMessage.scss';
 
 const AddNewMessage = (props) =>{
@@ -9,9 +7,7 @@ const AddNewMessage = (props) =>{
   let addNewMessage = () =>{
     let messageContent = messageTextarea.current.value;
 
-    //console.log(messageContent)
-    
-    props.dispatch(addMessageActionCreator(messageContent));
+    props.newMessageText(messageContent);
   };
 
 

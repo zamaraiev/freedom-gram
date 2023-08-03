@@ -3,7 +3,7 @@ import React from 'react';
 import './PostsBlock.scss';
 
 import SamplePost from './SamplePost/SamplePost';
-import AddNewPost from './AddNewPost/AddNewPost';
+import AddNewPostContainer from './AddNewPost/AddNewPostContainer';
 
 
 const PostsBlock = (props) =>{
@@ -11,7 +11,7 @@ const PostsBlock = (props) =>{
 
    return(
     <div className='posts-block'>
-      <AddNewPost dispatch={props.dispatch}/>
+      <AddNewPostContainer dispatch={props.dispatch}/>
       {posts}
     </div>
   );

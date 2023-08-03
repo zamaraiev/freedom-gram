@@ -1,5 +1,5 @@
 import React from 'react';
-import AddNewMessage from './AddNewMessage/AddNewMessage';
+import AddNewMessageContainer from './AddNewMessage/AddNewMessageContainer';
 import './Chat.scss';
 
 
@@ -14,7 +14,7 @@ const Chat = (props) =>{
             <div className="message-area">
                 {messages}
             </div>
-            <AddNewMessage dispatch={props.dispatch}/>
+            <AddNewMessageContainer dispatch={props.dispatch}/>
         </div>
     );
     

@@ -1,6 +1,4 @@
 import React from 'react';
-import { addPostActionCreator } from '../../../redux/accountReducer';
-import { addPostGlobalActionCreator } from '../../../redux/homeReducer';
 
 import './AddNewPost.scss';
 
@@ -11,16 +9,8 @@ const AddNewPost = (props) =>{
   let addNewPost = () =>{
     let postContent = postTextarea.current.value;
 
-    props.dispatch(addPostGlobalActionCreator(postContent));
-    props.dispatch(addPostActionCreator(postContent));
+    props.newPostText(postContent);
   };
-
- /* let onPostChange = (value) => {
-    debugger;
-    let postContent = postTextarea.current.value;
-    props.newPostContent.content = postContent;
-    // value={props.newPostContent.content} onChange={onPostChange}
-  };*/
 
    return(
       <div className='add-new-post'>
