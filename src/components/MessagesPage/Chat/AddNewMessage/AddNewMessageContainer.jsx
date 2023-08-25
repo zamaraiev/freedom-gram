@@ -1,16 +1,16 @@
 import React from 'react';
 import {addMessageActionCreator} from '../../../../redux/messagesReducer';
 import AddNewMessage from './AddNewMessage';
+import { connect } from 'react-redux';
 
-const AddNewMessageContainer = (props) =>{
-
-  let addNewMessage = (messageContent) =>{   
-    props.dispatch(addMessageActionCreator(messageContent));
-  };
-
-  return(
-    <AddNewMessage newMessageText={addNewMessage}/>
-  );
+let mapDispatchToProps = (dispatch) => {
+  return{
+    newMessageText: (messageContent) => {
+      dispatch(addMessageActionCreator(messageContent));
+    }
+  }
 }
+
+const AddNewMessageContainer = connect(null , mapDispatchToProps)(AddNewMessage);
 
 export default AddNewMessageContainer;

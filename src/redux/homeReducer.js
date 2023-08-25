@@ -1,5 +1,4 @@
 import accountAvatar from '../icons/avatar.jpg';
-import profileBg from '../icons/img.jpg';
 
 const ADD_POST_GLOBAL = 'ADD-POST-GLOBAL';
 
@@ -11,12 +10,15 @@ let initialState = {
 }
 
 const homeReducer = (state = initialState, action) => {
+
+    let stateCopy = {...state};
+
     switch(action.type){
         case ADD_POST_GLOBAL:
             debugger;
-            let postId = state.postData.length++ ;
+            let postId = stateCopy.postData.length++ ;
 
-            state.postData.push({
+            stateCopy.postData.push({
                 avatar: accountAvatar, 
                 userName: 'Dmytro', 
                 tag: '@dmytro', 
@@ -24,9 +26,9 @@ const homeReducer = (state = initialState, action) => {
                 likesCount: 0,
                 id: postId
             });
-            return state;
+            return stateCopy;
         default:
-            return state;
+            return stateCopy;
    }
 }
 

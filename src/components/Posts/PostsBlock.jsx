@@ -11,7 +11,7 @@ const PostsBlock = (props) =>{
 
    return(
     <div className='posts-block'>
-      <AddNewPostContainer dispatch={props.dispatch}/>
+      <AddNewPostContainer/>
       {posts}
     </div>
   );

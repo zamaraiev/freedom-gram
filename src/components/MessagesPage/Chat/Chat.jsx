@@ -14,7 +14,7 @@ const Chat = (props) =>{
             <div className="message-area">
                 {messages}
             </div>
-            <AddNewMessageContainer dispatch={props.dispatch}/>
+            <AddNewMessageContainer/>
         </div>
     );
     

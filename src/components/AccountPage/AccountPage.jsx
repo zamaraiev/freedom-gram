@@ -32,7 +32,7 @@ const AccountPage = (props) =>{
             </div>
           </div>
         </div>
-        <PostsBlock postData={props.state.postData} dispatch={props.dispatch}/>
+        <PostsBlock postData={props.state.postData}/>
     </div>
   );
 }

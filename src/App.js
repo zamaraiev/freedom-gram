@@ -1,6 +1,5 @@
 import React from 'react';
 import {Routes, Route } from 'react-router-dom';
-import { getStateActionCreator } from './redux/state';
 
 import Header from './components/Header/Header.jsx';
 import Sidebar from './components/Sidebar/Sidebar.jsx';
@@ -16,9 +15,9 @@ function App(props) {
         <Header/>
         <div className='page-content'>
           <Routes>
-            <Route path='/' element={<Home state={props.store.homePage} dispatch={props.dispatch}/>} />
-            <Route path='/profile' element={<AccountPage state={props.store.accountPage} dispatch={props.dispatch}/>} />
-            <Route path='/messages/*' element={<MessagesPage state={props.store.messagePage} dispatch={props.dispatch}/>} />
+            <Route path='/' element={<Home state={props.state.homePage} dispatch={props.dispatch}/>} />
+            <Route path='/profile' element={<AccountPage state={props.state.accountPage} dispatch={props.dispatch}/>} />
+            <Route path='/messages/*' element={<MessagesPage state={props.state.messagePage} dispatch={props.dispatch}/>} />
           </Routes>
         </div>
         <Sidebar/>

@@ -19,11 +19,14 @@ let initialState = {
 }
 
 const accountReducer = (state = initialState, action) => {
+
+    let stateCopy = {...state};
+
     switch(action.type){
         case ADD_POST:
-            let postId = state.postData.length++ ;
+            let postId = stateCopy.postData.length++ ;
 
-            state.postData.push({
+            stateCopy.postData.push({
                 avatar: accountAvatar, 
                 userName: 'Dmytro', 
                 tag: '@dmytro', 
@@ -31,9 +34,9 @@ const accountReducer = (state = initialState, action) => {
                 likesCount: 0,
                 id: postId
             });
-            return state;
+            return stateCopy;
         default:
-            return state;
+            return stateCopy;
    }
 }
 
