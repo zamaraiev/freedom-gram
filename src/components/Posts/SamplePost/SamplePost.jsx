@@ -7,7 +7,7 @@ import ShortAccountInfo from '../../ShortAccountInfo/ShortAccountInfo.jsx';
 const SamplePost = (props) =>{
    return(
       <div className="sample-post">
-        <ShortAccountInfo avatar={props.avatar} userName={props.userName} tag={props.tag}/>
+        <ShortAccountInfo avatar={props.avatar} name={props.name}  tag={props.tag}/>
         <div className="sample-post__content">
           {props.content}
         </div>

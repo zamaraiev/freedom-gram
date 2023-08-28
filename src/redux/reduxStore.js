@@ -6,7 +6,7 @@ import homeReducer from './homeReducer'
 let reducers = combineReducers(
     {
         homePage: homeReducer,
-        accountPage: accountReducer,
+        accountData: accountReducer,
         messagePage: messagesReducer
     }
 );

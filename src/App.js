@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar/Sidebar.jsx';
 import AccountPage from './components/AccountPage/AccountPage.jsx';
 import Home from './components/Home/Home.jsx';
 import MessagesPage from './components/MessagesPage/MessagesPage.jsx';
+import { UsersOverviewContainer } from './components/UsersOverview/UsersOverviewContainer.jsx'
 
 import './App.scss';
 
@@ -15,9 +16,10 @@ function App(props) {
         <Header/>
         <div className='page-content'>
           <Routes>
-            <Route path='/' element={<Home state={props.state.homePage} dispatch={props.dispatch}/>} />
-            <Route path='/profile' element={<AccountPage state={props.state.accountPage} dispatch={props.dispatch}/>} />
-            <Route path='/messages/*' element={<MessagesPage state={props.state.messagePage} dispatch={props.dispatch}/>} />
+            <Route path='/' element={<Home state={props.state.homePage}/>} />
+            <Route path='/profile' element={<AccountPage state={props.state.accountData.users[0]}/>} />
+            <Route path='/messages/*' element={<MessagesPage state={props.state.messagePage}/>} />
+            <Route path='/users-overview' element={<UsersOverviewContainer/>} />
           </Routes>
         </div>
         <Sidebar/>

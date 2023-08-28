@@ -1,0 +1,67 @@
+$bgColor: #000000;
+$textColor: #ffffff;
+$iconColor: $textColor;
+$buttonColor: #1d9bf0;
+
+.account{
+
+    &__bg{
+      width: 100%;
+      height: 300px;
+    }
+  
+    &__short-info {
+      padding: 0 20px;
+  
+      display: grid;
+      grid-template-columns: 75% 25%;
+  
+      &__column_1{
+        display: grid;
+  
+        .account-name {
+          margin-top: 100px;
+        }
+    
+        .account-avatar {
+          width: 150px;
+          height: 150px;
+          border-radius: 90px;
+          border: 7px solid $bgColor;
+      
+          position: absolute;
+          top: 280px;
+        }
+      }
+  
+      &__statistic{
+        display: grid;
+  
+        grid-template-columns: 50% 50%;
+  
+        width: 300px;
+  
+        p{
+          display: grid;
+        }
+      }
+  
+      &__column_2{
+        display: grid;
+  
+        .edit_account_button{
+          margin-top: 20px;
+  
+          width: 100%;
+          height: 40px;
+            
+          border: #ffffff solid 1px;
+  
+          background-color: rgba($color: #000000, $alpha: 0);
+        }
+      }
+    }
+  }
+  
+  
+  

@@ -1,22 +1,22 @@
 .short-info{
-    display: grid;
-    grid-template-columns: 30% 70%;
+  display: grid;
+  grid-template-columns: 20% 80%;
 
-    &.h2 {
-      text-align: center;
-    }
+  &.h2 {
+    text-align: center;
+  }
 
-    &__block-name{
+  &__block-name{
     
-      .block-name__text {
-       margin-top: 5px;
-      }      
-      .block-name__title {
-        margin-bottom: 0px;
-      }
+    .block-name__text {
+      margin-top: 5px;
+    }      
+    .block-name__title {
+      margin-bottom: 0px;
     }
+  }
 
-    & a{
-      margin: auto;
-    }
+  & a{
+    margin: auto 0;
+  }
 }

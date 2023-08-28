@@ -2,21 +2,66 @@ import accountAvatar from '../icons/avatar.jpg';
 import profileBg from '../icons/img.jpg';
 
 const ADD_POST = 'ADD-POST';
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET-USERS';
+
 
 let initialState = {
-    userData: { 
-        userName: 'Dmytro',
-        followersNumber: 'На вас підписані ' + 12,
-        profileBg: profileBg,
-        accountAvatar: accountAvatar,
-        joinedData: 'Приєдналися 12 липня',
-        followingNumber: 'Ви підписалися ' + 20
-    },
-    postData: [
-        {avatar: accountAvatar, userName: 'Dmytro', tag: '@dmytro', content: 'Hello World', likesCount: 11},
-        {avatar: accountAvatar, userName: 'Dmytro', tag: '@dmytro', content: 'Hi everyone1111', likesCount: 11}
+    users:[
+        {
+            name: 'Dmytro',
+            tag: '@dmytro',
+            id: 1,
+            joinedData: '12 липня',
+            city: 'Kherson',
+            contry: 'Ukreine',
+    
+            profileBg: profileBg,
+            avatar: accountAvatar,
+    
+            followersNumber: 12,
+            followingNumber: 20,
+            followed: true,
+            postData: [
+                {id: 1 , avatar: accountAvatar, name: 'Dmytro', tag: '@dmytro', userId: 1,content: 'Hello World', likesCount: 0},
+            ]
+        },
+        {
+            name: 'Artem',
+            tag: '@artem',
+            id: 2,
+            joinedData: '30 липня',
+            city: 'Kherson',
+            contry: 'Ukreine',
+    
+            profileBg: profileBg,
+            avatar: accountAvatar,
+    
+            followersNumber: 0,
+            followingNumber: 0,
+            followed: false,
+            postData: [
+                {id: 1 ,avatar: accountAvatar, name: 'Artem', tag: '@artem', userId: 2,content: 'Hello World', likesCount: 0},
+            ]
+        },
+        {
+            name: 'Туц Тома ТОма',
+            tag: '@toma',
+            id: 3,
+            joinedData: '30 липня',
+            city: 'Kherson',
+            contry: 'Ukreine',
+    
+            profileBg: profileBg,
+            avatar: accountAvatar,
+    
+            followersNumber: 0,
+            followingNumber: 0,
+            followed: true
+        }
     ]
-}
+};
 
 const accountReducer = (state = initialState, action) => {
 
@@ -24,17 +69,42 @@ const accountReducer = (state = initialState, action) => {
 
     switch(action.type){
         case ADD_POST:
-            let postId = stateCopy.postData.length++ ;
+            let postId = stateCopy.users[0].postData.length++ ;
 
-            stateCopy.postData.push({
+            stateCopy.users[0].postData.push({
                 avatar: accountAvatar, 
-                userName: 'Dmytro', 
+                name: 'Dmytro', 
                 tag: '@dmytro', 
                 content: action.postContent, 
                 likesCount: 0,
-                id: postId
+                id: postId,
+                userId: 1
             });
             return stateCopy;
+        case FOLLOW:
+            console.log('follow');
+            return {
+                ...state,
+                users: state.users.map( u =>  {
+                    if (u.id === action.userId) {
+                        return {...u, followed: true}
+                    }
+                    return u;
+                })
+            }
+        case UNFOLLOW:
+            console.log('unfollow');
+            return {
+                ...state,
+                users: state.users.map( u =>  {
+                    if (u.id === action.userId) {
+                        return {...u, followed: false}
+                    }
+                    return u;
+                })
+            }
+        case SET_USERS: 
+            return { ...state, users: [ ...state.users, ...action.users ]}
         default:
             return stateCopy;
    }
@@ -42,9 +112,31 @@ const accountReducer = (state = initialState, action) => {
 
 export default accountReducer;
 
-export const addPostActionCreator = (postContent) =>{
+export const addPostActionCreator = (postContent, userId) =>{
     return {
         type: ADD_POST,
-        postContent: postContent
+        postContent: postContent,
+        userId: userId
+    }
+}
+
+export const followActionCreator = (userId) =>{
+    return {
+        type: FOLLOW,
+        userId: userId
+    }
+}
+
+export const unfollowActionCreator = (userId) =>{
+    return {
+        type: UNFOLLOW,
+        userId: userId
+    }
+}
+
+export const setUsersActionCreator = (users) => {
+    return {
+        type: UNFOLLOW,
+        users: users
     }
 }

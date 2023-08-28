@@ -7,7 +7,7 @@
     border-top: #2f3336 solid 1px;
 
     .short-info{
-        grid-template-columns: 15% 85%;
+        grid-template-columns: 10% 90%;
     }
 
     &__likes {
@@ -18,7 +18,11 @@
             height: 25px;
             background-color: black;
             border: #ffffff solid 1px;
-            margin: 13px 10px;
+            margin: 10px;
+        }
+
+        .sample-post__button:first-child {
+            margin-left: 0px;
         }
     }
 }

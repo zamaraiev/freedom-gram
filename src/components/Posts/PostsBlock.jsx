@@ -7,7 +7,7 @@ import AddNewPostContainer from './AddNewPost/AddNewPostContainer';
 
 
 const PostsBlock = (props) =>{
-  let posts = props.postData.map(post => (<SamplePost avatar={post.avatar} userName={post.userName} tag={post.tag} content={post.content} likesCount={post.likesCount}/>));
+  let posts = props.postData.map(post => (<SamplePost avatar={post.avatar} name={post.name} tag={post.tag} content={post.content} likesCount={post.likesCount}/>));
 
    return(
     <div className='posts-block'>
