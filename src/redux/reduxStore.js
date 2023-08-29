@@ -1,11 +1,11 @@
 import { combineReducers, legacy_createStore as createStore } from "redux";
 import accountReducer from './accountReducer';
 import messagesReducer from './messagesReducer';
-import homeReducer from './homeReducer'
+import postReducer from './postReducer'
 
 let reducers = combineReducers(
     {
-        homePage: homeReducer,
+        postData: postReducer,
         accountData: accountReducer,
         messagePage: messagesReducer
     }

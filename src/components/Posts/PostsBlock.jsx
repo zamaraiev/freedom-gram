@@ -7,7 +7,22 @@ import AddNewPostContainer from './AddNewPost/AddNewPostContainer';
 
 
 const PostsBlock = (props) =>{
-  let posts = props.postData.map(post => (<SamplePost avatar={post.avatar} name={post.name} tag={post.tag} content={post.content} likesCount={post.likesCount}/>));
+  let filteredPosts = props.postData;
+
+  if(props.userId !== 0){
+    filteredPosts = props.postData.filter(post => post.userId === 1);
+  }
+
+  let posts = filteredPosts.map(post => (
+    <SamplePost
+      key={post.id}
+      avatar={post.avatar}
+      name={post.name}
+      tag={post.tag}
+      content={post.content}
+      likesCount={post.likesCount}
+    />
+  ));
 
    return(
     <div className='posts-block'>

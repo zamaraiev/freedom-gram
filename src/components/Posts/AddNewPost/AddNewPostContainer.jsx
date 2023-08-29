@@ -1,14 +1,12 @@
 import React from 'react';
-import { addPostActionCreator } from '../../../redux/accountReducer';
-import { addPostGlobalActionCreator } from '../../../redux/homeReducer';
+import { addPostActionCreator } from '../../../redux/postReducer';
 import AddNewPost from './AddNewPost';
 import { connect } from 'react-redux';
 
 let mapDispatchToProps = (dispatch) => {
   return{
-    newPostText: (postContent) => {
-      dispatch(addPostGlobalActionCreator(postContent));
-      dispatch(addPostActionCreator(postContent));
+    newPostText: (postContent , userId) => {
+      dispatch(addPostActionCreator(postContent , userId));
     }
   }
 }

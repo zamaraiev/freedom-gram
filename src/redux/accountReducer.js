@@ -1,7 +1,6 @@
 import accountAvatar from '../icons/avatar.jpg';
 import profileBg from '../icons/img.jpg';
 
-const ADD_POST = 'ADD-POST';
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
@@ -68,19 +67,6 @@ const accountReducer = (state = initialState, action) => {
     let stateCopy = {...state};
 
     switch(action.type){
-        case ADD_POST:
-            let postId = stateCopy.users[0].postData.length++ ;
-
-            stateCopy.users[0].postData.push({
-                avatar: accountAvatar, 
-                name: 'Dmytro', 
-                tag: '@dmytro', 
-                content: action.postContent, 
-                likesCount: 0,
-                id: postId,
-                userId: 1
-            });
-            return stateCopy;
         case FOLLOW:
             console.log('follow');
             return {
@@ -111,14 +97,6 @@ const accountReducer = (state = initialState, action) => {
 }
 
 export default accountReducer;
-
-export const addPostActionCreator = (postContent, userId) =>{
-    return {
-        type: ADD_POST,
-        postContent: postContent,
-        userId: userId
-    }
-}
 
 export const followActionCreator = (userId) =>{
     return {

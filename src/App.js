@@ -16,8 +16,8 @@ function App(props) {
         <Header/>
         <div className='page-content'>
           <Routes>
-            <Route path='/' element={<Home state={props.state.homePage}/>} />
-            <Route path='/profile' element={<AccountPage state={props.state.accountData.users[0]}/>} />
+            <Route path='/' element={<Home state={props.state.postData}/>} />
+            <Route path='/profile' element={<AccountPage state={props.state.accountData.users[0]} postData={props.state.postData}/>} />
             <Route path='/messages/*' element={<MessagesPage state={props.state.messagePage}/>} />
             <Route path='/users-overview' element={<UsersOverviewContainer/>} />
           </Routes>

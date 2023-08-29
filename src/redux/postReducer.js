@@ -1,43 +1,47 @@
 import accountAvatar from '../icons/avatar.jpg';
 
-const ADD_POST_GLOBAL = 'ADD-POST-GLOBAL';
+const ADD_POST = 'ADD-POST';
 
 let initialState = {
-    postData: [
+    posts: [
         {id: 1, avatar: accountAvatar, name: 'Dmytro', tag: '@dmytro', userId: 1, content: 'Hello World', likesCount: 11},
         {id: 2, avatar: accountAvatar, name: 'Artem', tag: '@artem', userId: 2,content: 'Hi everyone!', likesCount: 11}
     ]
 }
 
-const homeReducer = (state = initialState, action) => {
+const postReducer = (state = initialState, action) => {
 
     let stateCopy = {...state};
 
     switch(action.type){
-        case ADD_POST_GLOBAL:
-            let postId = stateCopy.postData.length++ ;
+        case ADD_POST:
+            let postId = stateCopy.posts.length++ ;
 
-            stateCopy.postData.push({
+            console.log(action.postContent);
+
+
+            stateCopy.posts.push({
                 avatar: accountAvatar, 
                 name: 'Dmytro', 
                 tag: '@dmytro', 
                 content: action.postContent, 
                 likesCount: 0,
                 id: postId,
-                userId: 1
+                userId: action.userId
             });
             return stateCopy;
         default:
-            return stateCopy;
+            return state;
    }
 }
 
-export default homeReducer;
+export default postReducer;
 
-export const addPostGlobalActionCreator = (postContent, userId) =>{
+export const addPostActionCreator = (postContent, userId) =>{
     return {
-        type: ADD_POST_GLOBAL,
+        type: ADD_POST,
         postContent: postContent,
+        userId: userId
     }
 }
 

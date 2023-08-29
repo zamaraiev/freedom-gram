@@ -10,6 +10,10 @@
         grid-template-columns: 10% 90%;
     }
 
+    &__content{
+        word-break: break-word;
+    }
+
     &__likes {
         display: flex;
 

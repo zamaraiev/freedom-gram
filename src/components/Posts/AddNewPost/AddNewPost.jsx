@@ -9,7 +9,7 @@ const AddNewPost = (props) =>{
   let addNewPost = () =>{
     let postContent = postTextarea.current.value;
 
-    props.newPostText(postContent);
+    props.newPostText(postContent , 1);
   };
 
    return(

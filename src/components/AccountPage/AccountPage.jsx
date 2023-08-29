@@ -12,12 +12,12 @@ const AccountPage = (props) =>{
         <div className='back-button'>
           <NavLink to='/'><img className='back-button__img' src={ArrowImg} alt='logo'></img></NavLink>
           <div className='back-button__wrapper'>
-            <h2 className='account-name'>{props.state.userName}</h2>
+            <h2 className='account-name'>{props.state.name}</h2>
             <p className='account-followers-number'>Підписано:{props.state.followersNumber}</p>
           </div>
         </div>
         <AccountInfo userData={props.state}/>
-        <PostsBlock postData={props.state.postData}/>
+        <PostsBlock postData={props.postData.posts}/>
     </div>
   );
 }

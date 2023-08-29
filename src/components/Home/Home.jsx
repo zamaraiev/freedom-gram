@@ -8,7 +8,7 @@ import './Home.scss';
 const Home = (props) =>{
    return(
       <div className='home-page'>
-        <PostsBlock postData={props.state.postData}/>
+        <PostsBlock postData={props.state.posts} userId={0}/>
     </div>
   );
 }
